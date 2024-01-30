@@ -80,3 +80,26 @@ def rod(n: int, dimensions: int = 2) -> np.ndarray:
         return np.array([[i, 0, 0] for i in range(n)])
     else:
         raise ValueError("Dimensions must be 2 or 3")
+
+
+# if __name__ == "__main__":
+#     start = time.time()
+#     N = 1000
+#     hrod = rod(N, dimensions=3)
+#     burn_in = (int)(10 * (N**1.19))
+#     saw = pivot(hrod, iterations=burn_in, dimensions=3)
+#     mid = time.time()
+#     print(f"Burn-in completed in {mid - start:.2f} seconds")
+#     walks = []
+#     total_iterations = 1
+#     for i in range(total_iterations):
+#         saw = pivot(saw, iterations=1, dimensions=3)
+#         walks.append(saw.tolist())
+#         progress = (i + 1) / total_iterations
+#         sys.stdout.write(f"\rProgress: {progress:.2%}")
+#         sys.stdout.flush()
+#     with open("walks3d.json", "w") as f:
+#         json.dump(walks, f)
+
+#     end = time.time()
+#     print(f"\nSAW Generaton completed in {mid - start:.2f} seconds")
